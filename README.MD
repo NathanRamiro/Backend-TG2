@@ -2,8 +2,8 @@
 O servidor responsavel pelas funções do app
 
 ## Integrantes
-Nathan Ramiro
-José Caíque
+### Nathan Ramiro do Nascimento
+### José Caíque Leite da Silva
 
 ## Licença
 [MIT](https://choosealicense.com/licenses/mit/)
