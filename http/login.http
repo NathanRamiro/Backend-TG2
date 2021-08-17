@@ -1,0 +1,21 @@
+@baseURL = http://localhost:4000
+@login = nathanMesmaSenha
+###
+// POST - Inclui nova conta
+POST {{baseURL}}/login
+Content-Type: application/json
+
+{
+    "login":"nathanMesmaSenha",
+    "senha":"senha"
+}
+
+###
+// POST - faz login
+POST {{baseURL}}/login/{{login}}
+Content-Type: application/json
+
+{
+    "login":"nathanMesmaSenha",
+    "senha":"senha"
+}
