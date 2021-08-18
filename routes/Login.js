@@ -26,11 +26,8 @@ rota.post('/', validaLogin, async (req, res) => {
     }
 
     try {
-
-        
         let dados = req.body
         dados.senha = EncSHA(dados.senha)
-        
 
         let login = new Login(dados)
         //let login = new Login(req.body)
@@ -47,48 +44,35 @@ rota.post('/', validaLogin, async (req, res) => {
     }
 
 })
+
 // verifica se a senha esta correta / faz o login
 rota.post('/:login', validaLogin, async (req, res) => {
     let erros = validationResult(req);
 
     if (!erros.isEmpty())
-        return res.status(400).json({ mensagem: erros.array() })
+        return res.status(400).json({ mensagem: erros.array() });
 
     const login = await Login.findOne({ login: req.body.login });
+    
     if (login) {
 
         let passw = EncSHA(req.body.senha)
-        
-        if(login.senha === passw){
+
+        if (login.senha === passw) {
 
             return res.status(200).json({
                 mensagem: 'Login Valido.'
             })
-        } else{
+        } else {
             return res.status(400).json({
                 mensagem: 'Senha invalida.'
-            })    
+            })
         }
-    }else{
+    } else {
         return res.status(400).json({
             mensagem: 'Esta conta não existe.'
         })
     }
-
-    try {
-        let login = new Login(req.body)
-        await login.save();
-
-        return res.status(200).json({
-            mensagem: 'Login criado.',
-        })
-    } catch (error) {
-        return res.status(500).json({
-            mensagem: 'Erro ao cadastrar Login.',
-            erro: `${error}`
-        })
-    }
-
 })
 
 module.exports = rota

@@ -8,7 +8,6 @@ function EncSHA(valor){
     .digest('hex') //converte o valor pra hash, mostra o resultado em hexadecimal
 
     return hash
-
 }
 
 module.exports = EncSHA

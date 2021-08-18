@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
     res.json({
         mensagem: 'API utilizada no desenvolvimento do Trabalho de Graduação II - Fatec Itu',
         autores: 'José Caíque Leite da Silva, Nathan Ramiro do Nascimento.',
-        titulo: 'Gerenciador de Senhas Interativo para a plataforma mobile.',
+        titulo: 'Gerenciador de Senhas para a plataforma mobile.',
         versao: '1.0.0',
         idiomas: idiomas
     });
@@ -47,5 +47,5 @@ app.use((req, res) => {
 })
 
 app.listen(PORT, (req, res) => {
-    console.log(`Servidor inicado na porta ${PORT}`)
+    console.log(`Servidor iniciado na porta ${PORT}.`)
 })
