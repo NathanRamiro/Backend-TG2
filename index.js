@@ -4,7 +4,7 @@ require('dotenv').config()
 const InicializaMongoServer = require('./config/DB')
 
 const rotasLogin = require('./routes/Login')
-//const rotasSites = require('./routes/Sites')
+const rotasSites = require('./routes/Sites')
 //const rotasContas = require('./routes/Contas')
 
 InicializaMongoServer()
@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/login', rotasLogin)
-//app.use('/sites',rotasSites)
+app.use('/sites', rotasSites)
 //app.use('/contas',rotasContas)
 
 app.use((req, res) => {

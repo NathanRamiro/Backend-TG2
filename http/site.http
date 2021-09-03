@@ -1,0 +1,14 @@
+@baseURL = http://localhost:4000
+@_id = "61324e661d0437cc0599c9b2"
+###
+// POST - Inclui novo site
+POST {{baseURL}}/sites
+Content-Type: application/json
+
+{
+    "url":"www.site2.com"
+}
+###
+// GET - recupera os sites disponiveis
+GET {{baseURL}}/sites
+Content-Type: application/json

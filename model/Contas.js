@@ -25,6 +25,10 @@ const SchemaContas = new mongoose.Schema({
     url:{
         type:String,
         required:true
+    },
+    status:{
+        type:Boolean,
+        default:true
     }
 },{timestamps:true});
 
