@@ -21,7 +21,7 @@ rota.post('/', validaLogin, async (req, res) => {
     if (login) {
         return res.status(400).json({
             //Poderíamos trocar 'Login' por 'Nome de usuário (username)'
-            mensagem: 'Este Login está indisponível.'
+            mensagem: 'Este Login está indisponível.' //talvez seja uma boa ideia trocar esses "mensagem" por "message" pra ficar igual as outras rotas
         })
     }
 
@@ -30,11 +30,11 @@ rota.post('/', validaLogin, async (req, res) => {
         dados.senha = EncSHA(dados.senha)
 
         let login = new Login(dados)
-        //let login = new Login(req.body)
         await login.save();
 
         return res.status(200).json({
             mensagem: 'Login criado.',
+
         })
     } catch (error) {
         return res.status(500).json({
@@ -60,8 +60,10 @@ rota.post('/:login', validaLogin, async (req, res) => {
 
         if (login.senha === passw) {
 
+            let {_id} = login
             return res.status(200).json({
-                mensagem: 'Login Valido.'
+                mensagem: 'Login Valido.',
+                _id:_id
             })
         } else {
             return res.status(400).json({

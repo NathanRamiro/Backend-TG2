@@ -1,5 +1,4 @@
 @baseURL = http://localhost:4000
-@_id = "61324e661d0437cc0599c9b2"
 ###
 // POST - Inclui novo site
 POST {{baseURL}}/sites

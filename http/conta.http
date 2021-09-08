@@ -1,0 +1,25 @@
+@baseURL = http://localhost:4000
+@dono = "611b12c537d2ad2352acbad5"
+@url = "61325fe69e33a9da86f94a68"
+###
+// POST - Inclui nova conta de acesso
+POST {{baseURL}}/contas
+Content-Type: application/json
+
+{
+    "login":"login",
+    "senha":"senha",
+    "dono":"611b12c537d2ad2352acbad5",
+    "url":"61325fe69e33a9da86f94a68"
+
+}
+
+###
+// GET - consulta contas de acesso
+GET {{baseURL}}/contas
+Content-Type: application/json
+
+{
+    "dono":"611b12c537d2ad2352acbad5",
+    "url":"61325fe69e33a9da86f94a68"
+}

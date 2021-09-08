@@ -5,7 +5,7 @@ const InicializaMongoServer = require('./config/DB')
 
 const rotasLogin = require('./routes/Login')
 const rotasSites = require('./routes/Sites')
-//const rotasContas = require('./routes/Contas')
+const rotasContas = require('./routes/Contas')
 
 InicializaMongoServer()
 
@@ -20,7 +20,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*')
     // '*' deve ser trocado pelos cabeçalhos que serão utilizados
     res.setHeader('Access-Control-Allow-Headers', '*')
-    // '*' deve ser trocado pelo dominio do app em produção
+    
     res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTION,PATCH')
     next()
 })
@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 
 app.use('/login', rotasLogin)
 app.use('/sites', rotasSites)
-//app.use('/contas',rotasContas)
+app.use('/contas',rotasContas)
 
 app.use((req, res) => {
     res.status(404).json({ mensagem: `${req.originalUrl} não existe.` })
