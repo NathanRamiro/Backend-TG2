@@ -72,7 +72,10 @@ rota.post('/', validaSite, async (req, res) => {
         return val.url === req.body.url
     })
     if (result) {
-        return res.status(400).json({ message: "o site ja existe" })
+        return res.status(400).json({ 
+                                    message: "o site ja existe",
+                                    _id:result._id
+                                    })
         // não necessariamente ruim
     }
 

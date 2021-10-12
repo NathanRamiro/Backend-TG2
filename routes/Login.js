@@ -21,7 +21,7 @@ rota.post('/', validaLogin, async (req, res) => {
   if (login) {
     return res.status(400).json({
       message: 'Este Login está indisponível.',
-      status: 400 //talvez seja uma boa ideia trocar esses "mensagem" por "message" pra ficar igual as outras rotas
+      status: 400
     })
   }
 
