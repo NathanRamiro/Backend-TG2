@@ -18,7 +18,7 @@ const validaNovaConta = [
     check('url', 'O Site não foi especificado').not().isEmpty()              //o _id do site
 ]
 
-rota.get('/',validaConta, async (req, res) => {
+rota.post('/:dono',validaConta, async (req, res) => {
     let erros = validationResult(req);
 
     if (!erros.isEmpty()) {

@@ -15,8 +15,8 @@ Content-Type: application/json
 }
 
 ###
-// GET - consulta contas de acesso
-GET {{baseURL}}/contas
+// POST - consulta contas de acesso
+POST {{baseURL}}/contas/{{dono}}
 Content-Type: application/json
 
 {
